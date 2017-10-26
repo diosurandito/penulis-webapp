@@ -56,7 +56,7 @@ public class AppController {
     false) String id,
         @ModelAttribute("pnls") Penulis penulis, BindingResult
         binding) {
-        Penulis pnls = pnlsRepo.findById(id);
+        Penulis pnls = pnlsRepo.findOne(id);
         penulis.setId(pnls.getId());
         penulis.setNama(pnls.getNama());
         penulis.setJudul_buku(pnls.getJudul_buku());
@@ -67,6 +67,13 @@ public class AppController {
         @ModelAttribute("pnls") Penulis pnls,
         BindingResult binding) {
         pnlsRepo.save(pnls);
+        return "redirect:/daftar-penulis";
+    }
+    
+    @RequestMapping("/delete")
+    public String deleteData(
+        @RequestParam(name = "id", required = true) String id) {
+        pnlsRepo.delete(id);
         return "redirect:/daftar-penulis";
     }
     

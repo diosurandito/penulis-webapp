@@ -27,8 +27,13 @@ and open the template in the editor.
                     <td th:text="${pnls.nama}"></td>
                     <td th:text="${pnls.judul_buku}"></td>
                     <td>
-                    <a href="@{/edit(id=${pnls.id})}">
+                    <a th:href="@{/edit(id=${pnls.id})}">
                     Ubah
+                    </a>
+                    </td>
+                    <td>
+                    <a th:href="@{/delete(id=${pnls.id})}">
+                    Hapus
                     </a>
                     </td>
                 </tr>

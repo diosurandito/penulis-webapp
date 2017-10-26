@@ -8,7 +8,4 @@ import org.springframework.stereotype.Repository;
 
 public interface PenulisRepo
 
-	extends JpaRepository<Penulis,String> {
-
-    public Penulis findById(String id);
-}
+	extends JpaRepository<Penulis,String> {}
